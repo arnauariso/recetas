@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Recetas Caseras | Recetas fáciles y deliciosas</title>
-    <meta name="description" content="Descubre recetas caseras fáciles y deliciosas: tiramisú, cheesecake, brownie, bizcochos, galletas y mucho más.">
+    <meta name="description" content="Descubre recetas caseras fáciles, deliciosas y explicadas paso a paso. Tiramisú, brownie, cheesecake, galletas y mucho más.">
 
     <style>
         * {
@@ -16,17 +16,18 @@
 
         body {
             font-family: Arial, sans-serif;
-            background: #faf7f2;
+            background: #f8f3ee;
             color: #333;
+            line-height: 1.6;
         }
 
         header {
-            background: #5a3825;
+            background: #6b3e26;
             color: white;
             padding: 20px;
         }
 
-        .header-content {
+        .header-container {
             max-width: 1100px;
             margin: auto;
             display: flex;
@@ -35,7 +36,7 @@
         }
 
         .logo {
-            font-size: 26px;
+            font-size: 25px;
             font-weight: bold;
         }
 
@@ -43,60 +44,50 @@
             color: white;
             text-decoration: none;
             margin-left: 20px;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
         }
 
         .hero {
-            background: #ead8c5;
             text-align: center;
-            padding: 70px 20px;
+            padding: 60px 20px 40px;
+            background: #fffaf5;
         }
 
         .hero h1 {
-            font-size: 44px;
+            font-size: 42px;
+            color: #6b3e26;
             margin-bottom: 15px;
-            color: #4a2c1c;
         }
 
         .hero p {
-            font-size: 19px;
-            max-width: 650px;
-            margin: auto;
+            font-size: 18px;
+            margin-bottom: 25px;
         }
 
         .search {
-            max-width: 600px;
-            margin: 30px auto 0;
-            display: flex;
-        }
-
-        .search input {
             width: 100%;
+            max-width: 500px;
             padding: 15px;
-            border: none;
-            border-radius: 8px 0 0 8px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
             font-size: 16px;
-        }
-
-        .search button {
-            padding: 15px 20px;
-            border: none;
-            background: #5a3825;
-            color: white;
-            border-radius: 0 8px 8px 0;
-            cursor: pointer;
         }
 
         .container {
             max-width: 1100px;
-            margin: 50px auto;
-            padding: 0 20px;
+            margin: auto;
+            padding: 40px 20px;
         }
 
-        .section-title {
+        .recipes-title {
             text-align: center;
+            color: #6b3e26;
+            margin-bottom: 30px;
             font-size: 32px;
-            margin-bottom: 35px;
-            color: #4a2c1c;
         }
 
         .recipes {
@@ -118,12 +109,12 @@
         }
 
         .recipe-image {
-            height: 200px;
-            background: #dfc2a8;
+            height: 180px;
+            background: #ead7c7;
             display: flex;
-            justify-content: center;
             align-items: center;
-            font-size: 60px;
+            justify-content: center;
+            font-size: 70px;
         }
 
         .recipe-content {
@@ -131,74 +122,82 @@
         }
 
         .recipe-content h3 {
-            color: #4a2c1c;
+            color: #6b3e26;
             margin-bottom: 10px;
-            font-size: 22px;
         }
 
         .recipe-content p {
+            margin-bottom: 18px;
             color: #666;
-            line-height: 1.5;
-            margin-bottom: 15px;
         }
 
-        .recipe-button {
+        .button {
             display: inline-block;
-            background: #5a3825;
+            background: #6b3e26;
             color: white;
-            padding: 10px 15px;
+            padding: 10px 18px;
             border-radius: 6px;
             text-decoration: none;
+            font-weight: bold;
+        }
+
+        .button:hover {
+            background: #4e2d1c;
         }
 
         .ad {
-            max-width: 728px;
-            height: 100px;
+            max-width: 900px;
+            height: 120px;
             margin: 40px auto;
-            background: #eee;
+            background: #eee5dd;
             display: flex;
-            justify-content: center;
             align-items: center;
-            color: #999;
+            justify-content: center;
+            color: #777;
             border-radius: 8px;
+            font-size: 14px;
         }
 
         footer {
-            background: #3b2519;
+            background: #2f2119;
             color: white;
             text-align: center;
-            padding: 35px 20px;
-            margin-top: 60px;
+            padding: 30px 20px;
+            margin-top: 40px;
         }
 
         footer a {
             color: white;
-            margin: 0 10px;
             text-decoration: none;
+            margin: 0 10px;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
         }
 
         @media (max-width: 800px) {
             .recipes {
                 grid-template-columns: repeat(2, 1fr);
             }
-        }
-
-        @media (max-width: 600px) {
-            .header-content {
-                flex-direction: column;
-                gap: 15px;
-            }
-
-            nav a {
-                margin: 0 8px;
-            }
 
             .hero h1 {
                 font-size: 34px;
             }
 
+            .header-container {
+                flex-direction: column;
+                gap: 15px;
+            }
+        }
+
+        @media (max-width: 550px) {
             .recipes {
                 grid-template-columns: 1fr;
+            }
+
+            nav a {
+                margin: 0 7px;
             }
         }
     </style>
@@ -207,7 +206,7 @@
 <body>
 
 <header>
-    <div class="header-content">
+    <div class="header-container">
         <div class="logo">🍰 Recetas Caseras</div>
 
         <nav>
@@ -223,155 +222,223 @@
     <h1>Recetas caseras fáciles y deliciosas</h1>
 
     <p>
-        Descubre recetas sencillas para preparar postres y dulces
-        deliciosos en casa.
+        Descubre recetas sencillas para preparar en casa,
+        explicadas paso a paso.
     </p>
 
-    <div class="search">
-        <input type="text" id="searchInput" placeholder="¿Qué receta buscas?">
-        <button onclick="buscarReceta()">Buscar</button>
-    </div>
+    <input
+        type="text"
+        id="search"
+        class="search"
+        placeholder="🔍 Buscar una receta..."
+        onkeyup="buscarReceta()"
+    >
 
 </section>
 
-<div class="ad">
-    ESPACIO PARA PUBLICIDAD
-</div>
+<div class="container">
 
-<main class="container" id="recetas">
-
-    <h2 class="section-title">Nuestras recetas</h2>
+    <h2 class="recipes-title" id="recetas">
+        Nuestras recetas
+    </h2>
 
     <div class="recipes" id="recipeList">
 
-        <article class="recipe-card">
-            <div class="recipe-image">🍮</div>
+        <!-- TIRAMISÚ -->
+        <div class="recipe-card">
+
+            <div class="recipe-image">
+                ☕
+            </div>
 
             <div class="recipe-content">
+
                 <h3>Tiramisú</h3>
 
                 <p>
-                    Aprende a preparar un tiramisú italiano cremoso,
-                    fácil y delicioso.
+                    Tiramisú casero fácil, cremoso y delicioso.
+                    Un clásico italiano perfecto para cualquier ocasión.
                 </p>
 
-                <a href="#" class="recipe-button">Ver receta</a>
+                <a href="tiramisu.html" class="button">
+                    Ver receta
+                </a>
+
             </div>
-        </article>
+
+        </div>
 
 
-        <article class="recipe-card">
-            <div class="recipe-image">🍰</div>
+        <!-- PASTEL DE QUESO -->
+        <div class="recipe-card">
+
+            <div class="recipe-image">
+                🍰
+            </div>
 
             <div class="recipe-content">
+
                 <h3>Pastel de queso</h3>
 
                 <p>
-                    Un cheesecake cremoso y sencillo perfecto
-                    para cualquier ocasión.
+                    Pastel de queso fácil y cremoso,
+                    perfecto para los amantes de los postres.
                 </p>
 
-                <a href="#" class="recipe-button">Ver receta</a>
+                <a href="pastel-de-queso.html" class="button">
+                    Ver receta
+                </a>
+
             </div>
-        </article>
+
+        </div>
 
 
-        <article class="recipe-card">
-            <div class="recipe-image">🍫</div>
+        <!-- BROWNIE -->
+        <div class="recipe-card">
+
+            <div class="recipe-image">
+                🍫
+            </div>
 
             <div class="recipe-content">
-                <h3>Brownie</h3>
+
+                <h3>Brownie de chocolate</h3>
 
                 <p>
-                    Brownie de chocolate intenso, jugoso por dentro
-                    y con una deliciosa corteza.
+                    Brownie casero de chocolate,
+                    jugoso por dentro y con mucho sabor.
                 </p>
 
-                <a href="#" class="recipe-button">Ver receta</a>
+                <a href="brownie.html" class="button">
+                    Ver receta
+                </a>
+
             </div>
-        </article>
+
+        </div>
 
 
-        <article class="recipe-card">
-            <div class="recipe-image">🍰</div>
+        <!-- BIZCOCHO -->
+        <div class="recipe-card">
+
+            <div class="recipe-image">
+                🍰
+            </div>
 
             <div class="recipe-content">
+
                 <h3>Bizcocho tradicional</h3>
 
                 <p>
-                    El clásico bizcocho casero fácil, esponjoso
-                    y perfecto para desayunos.
+                    El clásico bizcocho casero,
+                    fácil de preparar y perfecto para desayunos.
                 </p>
 
-                <a href="#" class="recipe-button">Ver receta</a>
+                <a href="bizcocho-tradicional.html" class="button">
+                    Ver receta
+                </a>
+
             </div>
-        </article>
+
+        </div>
 
 
-        <article class="recipe-card">
-            <div class="recipe-image">🍪</div>
+        <!-- GALLETAS MANTEQUILLA -->
+        <div class="recipe-card">
+
+            <div class="recipe-image">
+                🍪
+            </div>
 
             <div class="recipe-content">
+
                 <h3>Galletas de mantequilla</h3>
 
                 <p>
-                    Galletas de mantequilla crujientes por fuera
-                    y deliciosas por dentro.
+                    Galletas de mantequilla caseras,
+                    crujientes y fáciles de preparar.
                 </p>
 
-                <a href="#" class="recipe-button">Ver receta</a>
+                <a href="galletas-de-mantequilla.html" class="button">
+                    Ver receta
+                </a>
+
             </div>
-        </article>
+
+        </div>
 
 
-        <article class="recipe-card">
-            <div class="recipe-image">🍪</div>
+        <!-- GALLETAS CHOCOLATE -->
+        <div class="recipe-card">
+
+            <div class="recipe-image">
+                🍪
+            </div>
 
             <div class="recipe-content">
+
                 <h3>Galletas de chocolate</h3>
 
                 <p>
-                    Galletas caseras con chocolate, fáciles de preparar
-                    y perfectas para cualquier momento.
+                    Galletas de chocolate caseras,
+                    perfectas para acompañar un café o un vaso de leche.
                 </p>
 
-                <a href="#" class="recipe-button">Ver receta</a>
+                <a href="galletas-de-chocolate.html" class="button">
+                    Ver receta
+                </a>
+
             </div>
-        </article>
+
+        </div>
 
 
-        <article class="recipe-card">
-            <div class="recipe-image">🧁</div>
+        <!-- MAGDALENAS -->
+        <div class="recipe-card">
+
+            <div class="recipe-image">
+                🧁
+            </div>
 
             <div class="recipe-content">
-                <h3>Magdalenas</h3>
+
+                <h3>Magdalenas caseras</h3>
 
                 <p>
-                    Magdalenas caseras esponjosas y fáciles,
-                    ideales para desayunar.
+                    Magdalenas caseras suaves y esponjosas,
+                    ideales para desayunar o merendar.
                 </p>
 
-                <a href="#" class="recipe-button">Ver receta</a>
+                <a href="magdalenas.html" class="button">
+                    Ver receta
+                </a>
+
             </div>
-        </article>
+
+        </div>
 
     </div>
 
-</main>
+    <div class="ad">
+        ESPACIO PARA PUBLICIDAD
+    </div>
 
-<div class="ad">
-    ESPACIO PARA PUBLICIDAD
 </div>
 
 <footer id="contacto">
 
-    <p>© 2026 Recetas Caseras</p>
+    <p>
+        © 2026 Recetas Caseras
+    </p>
 
     <br>
 
-    <a href="#">Política de privacidad</a>
-    <a href="#">Cookies</a>
-    <a href="#">Contacto</a>
+    <p>
+        <a href="#">Política de privacidad</a>
+        <a href="#">Cookies</a>
+        <a href="#">Contacto</a>
+    </p>
 
 </footer>
 
@@ -380,28 +447,28 @@
 
 function buscarReceta() {
 
-    const texto = document
-        .getElementById("searchInput")
+    let input = document
+        .getElementById("search")
         .value
         .toLowerCase();
 
-    const recetas = document.querySelectorAll(".recipe-card");
+    let recetas = document
+        .getElementById("recipeList")
+        .getElementsByClassName("recipe-card");
 
-    recetas.forEach(function(receta) {
+    for (let i = 0; i < recetas.length; i++) {
 
-        const nombre = receta
-            .querySelector("h3")
-            .textContent
+        let nombre = recetas[i]
+            .getElementsByTagName("h3")[0]
+            .innerText
             .toLowerCase();
 
-        if (nombre.includes(texto)) {
-            receta.style.display = "block";
+        if (nombre.includes(input)) {
+            recetas[i].style.display = "";
         } else {
-            receta.style.display = "none";
+            recetas[i].style.display = "none";
         }
-
-    });
-
+    }
 }
 
 </script>
